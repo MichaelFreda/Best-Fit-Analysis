@@ -1,7 +1,9 @@
 # Lab12
 # Michael & Derek
 
+from functions import *
 
+print(closePaper(1))
 """
 1) Click on the Packages button on the left (the cube) and then search for and install Python's Natural Language Toolkit.
     A] Type "nltk" into the search field.
