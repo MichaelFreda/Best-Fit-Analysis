@@ -19,37 +19,32 @@ def avgWLength(list):
 	average = tLetters/wordCount
 	return average
 
-def tTR(text):
-	wordDict = {}
+def tTR(text, dict):
 	dWords = 0
 	tWords = 0
-	for word in text:
-		if word not in wordDict:
-		 wordDict[word] = 1 
-		else:
-		 wordDict[word] += 1
-	for word in wordDict:
+	for word in dict:
 		dWords += 1
-		tWords += wordDict[word]
+		tWords += dict[word]
 	ratio = dWords / tWords
 	return ratio
 
-def hLR(text):
-	wordDict = {}
+def hLR(text, dict):
 	sWords = 0
 	tWords = 0
+	for word in dict:
+		if dict[word] == 1:
+			sWords += 1
+		tWords += dict[word]
+	ratio = sWords / tWords
+	return ratio
+
+def createDict(text):
+	wordDict = {}
 	for word in text:
 		if word not in wordDict:
 		 wordDict[word] = 1 
 		else:
 		 wordDict[word] += 1
-	for word in wordDict:
-		if wordDict[word] == 1:
-			sWords += 1
-		tWords += wordDict[word]
-	ratio = sWords / tWords
-	return ratio
-
-
+	return wordDict
 
 
