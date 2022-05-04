@@ -1,14 +1,15 @@
 # Michael & Derek
-
+import nltk
 
 def openPaper(num):
 	inObject = open("text_"+str(num)+".txt")
 	return inObject
 
 def getText(num):
-	line = openPaper(num).read()
+	textObject = openPaper(num)
+	textString = textObject.read()
 	openPaper(num).close()
-	return line
+	return textString
 
 def avgWLength(list):
 	tLetters = 0
