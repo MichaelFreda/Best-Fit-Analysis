@@ -1,0 +1,6 @@
+# Michael & Derek
+
+T1
+Letter count in a word
+Word count in a sentence
+Amount of clauses/phrases
