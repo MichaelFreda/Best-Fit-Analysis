@@ -1,6 +1,7 @@
 # Michael & Derek
 import nltk
 
+
 def openPaper(num):
 	inObject = open("text_"+str(num)+".txt")
 	return inObject
@@ -48,4 +49,8 @@ def createDict(text):
 		 wordDict[word] += 1
 	return wordDict
 
-
+def delNonWord(text):
+	for word in text:
+		if (word == ",") or (word == ".") or (word == "!") or (word == "?"):
+			text.remove(word)
+	return text
