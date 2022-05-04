@@ -3,11 +3,10 @@
 
 from functions import *
 
-print(avgWLength(["Hi", "my", "name", "is", "Derek"]))
+print(tTR(1))
 
-assert avgWLength(["I","am","hungry"]) == 3, "Wrong average"
-assert avgWLength(["Hi", "there", "pal"]) == 10/3, "Wrong average"
-assert avgWLength(["Uh", "ohhh", "I", "am", "sad"]) == 12/5, "Wrong average"
-assert avgWLength(["Last", "lab", "yes", "sir!"]) == 14/4, "Wrong average"
-assert avgWLength(["This", "is", "a", "test"]) == 11/4, "Wrong average"
-print("Success!")
+assert tTR(2) == 0.5, "Wrong ratio"
+assert tTR(3) == 1, "Wrong ratio"
+assert tTR(4) == 4/6, "Wrong ratio"
+assert tTR(5) == 0.4, "Wrong ratio"
+print("Success")
