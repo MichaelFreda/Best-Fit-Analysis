@@ -5,8 +5,9 @@ def openPaper(num):
 	inObject = open("text_"+str(num)+".txt")
 	return inObject
 
-def closePaper(num):
+def getText(num):
 	line = openPaper(num).read()
+	openPaper(num).close()
 	return line
 
 def avgWLength(list):
@@ -18,11 +19,11 @@ def avgWLength(list):
 	average = tLetters/wordCount
 	return average
 
-def tTR(num):
+def tTR(text):
 	wordDict = {}
 	dWords = 0
 	tWords = 0
-	for word in closePaper(num).split():
+	for word in text:
 		if word not in wordDict:
 		 wordDict[word] = 1 
 		else:
@@ -30,16 +31,25 @@ def tTR(num):
 	for word in wordDict:
 		dWords += 1
 		tWords += wordDict[word]
-	# print("Distinct Words: ",dWords)
-	# print("Total words: ",tWords)
-	# print(dWords/tWords)
 	ratio = dWords / tWords
-	# print("tTR: ",ratio)
+	return ratio
+
+def hLR(text):
+	wordDict = {}
+	sWords = 0
+	tWords = 0
+	for word in text:
+		if word not in wordDict:
+		 wordDict[word] = 1 
+		else:
+		 wordDict[word] += 1
+	for word in wordDict:
+		if wordDict[word] == 1:
+			sWords += 1
+		tWords += wordDict[word]
+	ratio = sWords / tWords
 	return ratio
 
 
 
 
-# len of the dictionary
-# OVER
-# sum the values of the dictionary together
