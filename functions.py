@@ -1,6 +1,7 @@
 # Michael & Derek
 import nltk
-
+#nltk.download('punkt')
+#nltk.download('stopwords')
 
 def openPaper(num):
 	inObject = open("text_"+str(num)+".txt")
@@ -54,3 +55,13 @@ def delNonWord(text):
 		if (word == ",") or (word == ".") or (word == "!") or (word == "?"):
 			text.remove(word)
 	return text
+
+def avgSenLen(text):
+	tWords = 0
+	sentNum = 0
+	text = nltk.sent_tokenize(text)
+	for sent in text:
+		sentLen = len(delNonWord(nltk.word_tokenize(sent)))
+		tWords += sentLen
+		sentNum += 1
+	return tWords/sentNum
