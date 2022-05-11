@@ -59,9 +59,11 @@ def delNonWord(text):
 def avgSenLen(text):
 	tWords = 0
 	sentNum = 0
-	text = nltk.sent_tokenize(text)
 	for sent in text:
 		sentLen = len(delNonWord(nltk.word_tokenize(sent)))
 		tWords += sentLen
 		sentNum += 1
 	return tWords/sentNum
+
+#def avgPunMarks(text):
+	
