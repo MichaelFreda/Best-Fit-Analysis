@@ -1,7 +1,7 @@
 # Michael & Derek
 import nltk
-#nltk.download('punkt')
-#nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 def openPaper(num):
 	inObject = open("text_"+str(num)+".txt")
@@ -65,5 +65,13 @@ def avgSenLen(text):
 		sentNum += 1
 	return tWords/sentNum
 
-#def avgPunMarks(text):
-	
+def avgPunMarks(text):
+	pMarks = 0
+	sentNum = 0
+	for sent in text:
+		sent = nltk.word_tokenize(sent)
+		sentNum += 1
+		for char in sent:
+			if (char == ".") or (char == "?") or (char == "!") or (char == ",") or (char == ":") or (char == ";") or (char == "-") or (char == "[") or (char == "]") or (char == "{") or (char == "}") or (char == "(") or (char == ")") or (char == "'") or (char == "--"):
+				pMarks += 1
+	return pMarks/sentNum
