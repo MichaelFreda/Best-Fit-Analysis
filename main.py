@@ -6,11 +6,12 @@
 
 from functions import *
 
-text = nltk.sent_tokenize(getText(1))
+text1 = nltk.sent_tokenize(getText(1))
 # text2 = nltk.sent_tokenize(getText(2))
 # text3 = nltk.sent_tokenize(getText(3))
 # text4 = nltk.sent_tokenize(getText(4))
 # text5 = nltk.sent_tokenize(getText(5))
 
-print(text[:7])
 
+print(avgSenLen(text1))
+print(avgPunMarks(text1))
