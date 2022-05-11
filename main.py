@@ -6,5 +6,5 @@
 
 from functions import *
 
-num = 1
+numList = [1, 2, 3]
 print(styFP(num))

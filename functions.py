@@ -1,7 +1,7 @@
 # Michael & Derek
 import nltk
-#nltk.download('punkt')
-#nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 def openPaper(num):
 	"""Opens the text of num file"""
@@ -46,8 +46,6 @@ def tTR(text, dict):
 		# Add the dict value of every word to tWords
 		tWords += dict[word]
 	# Returns Type-Token Ratio
-	print(dWords)
-	print(tWords)
 	return dWords / tWords
 
 def hLR(text, dict):
@@ -144,3 +142,6 @@ def styFP(num):
 	fpList.append(avgPunMarks(textList))
 	# Returns fpList
 	return fpList
+
+def multFP(numList):
+	
