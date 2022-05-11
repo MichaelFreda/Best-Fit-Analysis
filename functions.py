@@ -1,7 +1,7 @@
 # Michael & Derek
 import nltk
-# nltk.download('punkt')
-# nltk.download('stopwords')
+#nltk.download('punkt')
+#nltk.download('stopwords')
 
 def openPaper(num):
 	"""Opens the text of num file"""
@@ -46,6 +46,8 @@ def tTR(text, dict):
 		# Add the dict value of every word to tWords
 		tWords += dict[word]
 	# Returns Type-Token Ratio
+	print(dWords)
+	print(tWords)
 	return dWords / tWords
 
 def hLR(text, dict):
@@ -63,12 +65,12 @@ def hLR(text, dict):
 	# Returns Hapax Legomena Ratio
 	return sWords/tWords
 
-def createDict(text):
+def createDict(textList):
 	"""Creates a dictionary using text"""
 	# Assigns default values
 	wordDict = {}
 	# For loop using text
-	for word in text:
+	for word in textList:
 		# If word not found, assign a default value of 1
 		if word not in wordDict:
 		 wordDict[word] = 1 
@@ -123,12 +125,22 @@ def avgPunMarks(textList):
 	return pMarks/sentNum
 
 def styFP(num):
+	"""Computes a stylistic fingerprint for num text"""
+	# Assigns default value
 	fpList = []
+	# Uses getText function to get text value
 	text = getText(num)
-	list =
+	# Uses split method to break text into a list of words
+	list = text.split()
+	# Uses text to create a dictionary dict
+	dict = createDict(list)
+	# Uses nltk sent_tokenize method to break text into sentences
 	textList = nltk.sent_tokenize(text)
-	avgWLength(list)
-	tTR(text, dict)
-	hLR(text, dict)
-	avgSenLen(textList)
-	avgPunMarks(textList)
+	# Appends all of the values into fpList
+	fpList.append(avgWLength(list))
+	fpList.append(tTR(text, dict))
+	fpList.append(hLR(text, dict))
+	fpList.append(avgSenLen(textList))
+	fpList.append(avgPunMarks(textList))
+	# Returns fpList
+	return fpList
