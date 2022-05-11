@@ -121,3 +121,14 @@ def avgPunMarks(textList):
 				pMarks += 1
 	# Returns average punctuation marks
 	return pMarks/sentNum
+
+def styFP(num):
+	fpList = []
+	text = getText(num)
+	list =
+	textList = nltk.sent_tokenize(text)
+	avgWLength(list)
+	tTR(text, dict)
+	hLR(text, dict)
+	avgSenLen(textList)
+	avgPunMarks(textList)
