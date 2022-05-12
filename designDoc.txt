@@ -1,0 +1,84 @@
+# Michael and Derek
+
+
+
+Discover:
+
+Ideas for Project
+--> Compare MLK, Vince Lombardi, and Donald Trump motivational speeches. 
+***Use more than just these speeches!!!***
+
+1. Donald Trump motivational speech (in Selma,NC):
+
+https://www.rev.com/blog/transcripts/donald-trump-rally-in-selma-nc-north-carolina-4-9-22-transcript
+- This rally occured just recently this month with the main phrase being "Save America". These rallies are less sophisticated, especially since Trump is no longer President.
+
+2. Father Charles Coughlin:
+Father Charles E. Coughlin was a Catholic priest who reached a large audience through mass rallies and radio broadcasts. Coughlin, openly antisemitic, was an outspoken critic of the political establishment.
+https://encyclopedia.ushmm.org/content/en/film/father-charles-coughlin-opposes-roosevelt
+
+3. "I Have a Dream" speech by Martin Luther King.
+- This speech contains powerful and motivational words that can be used in different contexts along with Dr.King's. We can try to find a relationship between these powerful words and possibly the lengths of the sentences he used to deliver the motivational statements.
+https://www.pbs.org/weta/washingtonweek/blog-post/5-martin-luther-king-jr%E2%80%99s-most-memorable-speeches
+
+"What it Takes to be Number One" speech by Vince Lombardi.
+- Lombardi compares sports to the real world, and relates different situations to seemingly unrelated events/ideas. We could identify words that are used very little times, and try to relate them to a sports situation. 
+Or, we could try to count the number of "winnning" words that were used in the speech.
+We could compare this speech to others that he has made, such as the Leadership speech --> https://www.pnbhs.school.nz/wp-content/uploads/2015/11/VINCE-LOMBARDI-The-Speech-Leadership.pdf
+
+
+
+Jimmy V's 1993 ESPY speech
+- This is a speech that Jimmy Valvano delivered right before he passed away from cancer. He brings up many motivational ideas for life and sports as well.
+
+Mahatma Gandhi
+
+
+- We could compare this speech to the Vince Lombardi speech or even the "I have a Dream" speech to identify similar words that are used in each one.
+
+
+Define:
+Tools and Measurements needed...
+
+--> We can use a slightly modified version of the wordSent() function that we created in the Sentiment Analysis lab. This function could count the number of words that are in each speech. Not sure if getting any kind of sentiment rating would make sense for individual words, so we may only want to compare the number of times a word is used in each speech.
+
+--> We could also calculate the average length of the sentences in each speech. We would have to create a function that calculates the total number of characters (or letters) in the speech and then divide that by the number of sentences.
+
+--> We could also calculate the amount of words used that are 5 letters or less. This could give us an idea of how "static" or "choppy" the sentences of these motivational speakers are.
+
+Question:
+How do you identify a demagogue? If we have to guess if this speech was delivered by a demagogue, can we correctly identify who it was?
+- What are some ways that demagogues motivate or persuade their audiences? Are there any strategies or traits that demogogues follow?
+--> Compare averages of multiple speeches from one speaker to a different speaker. We know that MLK was not a demogogue and we can assume that Father Coughlin was. But was/is Trump?
+
+Design:
+***Are we on the right track?***
+Step-by-step algorithm and/or pseudocode and/or flowchart.
+
+Speeches and reading the text files:
+#attach 3 speeches to the repl
+# Use MLK, Trump, Father Coughlin
+#readlines in 1 of the speeches
+------------
+
+Creating word bank and calculating statistics:
+# create a word bank that has common words used by demagogues.
+#search for certain words that imply demagogue characteristics
+# calculate number of times "!" at the end of each sentence.
+# amount of times they say "I" (egotistical) (?)
+# amount of "negative" insulting or degrading words.
+**ADD OTHER STATISTICS THAT WE WANT TO CALCULATE**
+-------------
+
+Comparison and Conclusion:
+#compare statistics that we have calculated to multiple motivational speakers.
+
+# At the end of comparison, our main goal is to determine whether a given speech(without knowing who delivered it) was delivered by a demogogue or not.
+
+Develop:
+challenges, successes, other notes during the process
+- We were confused with what the nltk function actually does, and we asked the forum to help clarify. It splits text into individual sentences, which makes it easier to calculate statitics for large texts.
+
+Deliver:
+
+
