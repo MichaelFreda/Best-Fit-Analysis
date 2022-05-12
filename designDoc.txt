@@ -70,15 +70,20 @@ Creating word bank and calculating statistics:
 **ADD OTHER STATISTICS THAT WE WANT TO CALCULATE**
 -------------
 
-Comparison and Conclusion:
-#compare statistics that we have calculated to multiple motivational speakers.
 
-# At the end of comparison, our main goal is to determine whether a given speech(without knowing who delivered it) was delivered by a demogogue or not.
 
 Develop:
 challenges, successes, other notes during the process
 - We were confused with what the nltk function actually does, and we asked the forum to help clarify. It splits text into individual sentences, which makes it easier to calculate statitics for large texts.
+- When we first started working on this project, it was difficult to understand how the fingerprints worked. After discussing after class with Professor Fruchter, we got a better sense on what our thinking process should be as we moved through the project.
+- ANY MORE CHALLENGES???
 
 Deliver:
+Comparison and Conclusion...
+#compare statistics that we have calculated to multiple motivational speakers.
+- One of our main questions is how do we identify a demagogue? We chose Father Coughlin to be the more "obvious" demagogue based on prior knowledge and MLK as the civil rights activist. We were curious if a more current "motivational" speaker, former President Donald Trump, would fall under the demagogue category. 
 
+- Based on our results from our bestFit() comparison function, we have determined that Trump is most similar to Father Coughlin. After calculating the averages of the fingerprints which contained multiple statistics, we calculated the percent errors of each statistic. The bestFit() function compares the percent errors of the speakers we have chosen and lets the user know who is most similar.
+
+# At the end of comparison, our main goal is to determine whether a given speech(without knowing who delivered it) was delivered by a demogogue or not.
 
