@@ -8,11 +8,18 @@ from functions import *
 
 # list of Father Coughlin's speeches
 fatherList = [1, 2, 3]
+# list of Trump's speeches
+trumpList = [4, 5, 6]
 # list of MLK's speeches
 mlkList = [7, 8, 9]
 # average fingerprint of Father Coughlin's speeches
 print("Father Coughlin's average fingerprint:")
 print(multFP(fatherList))
+# average fingerprint of Trump's speeches
+print("Trump's average fingerprint:")
+print(multFP(trumpList))
 # average fingerprint of MLK's speeches
 print("Martin Luther King Jr's average fingerprint:")
 print(multFP(mlkList))
+
+calcPE(multFP(fatherList), multFP(trumpList))

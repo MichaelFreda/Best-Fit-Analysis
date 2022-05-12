@@ -1,7 +1,7 @@
 # Michael & Derek
 import nltk
-#nltk.download('punkt')
-#nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 def openPaper(num):
 	"""Opens the text of num file"""
@@ -170,4 +170,14 @@ def multFP(numList):
 	totFP.append(totAvgPM/3)
 	# Returns totFP
 	return totFP
-			
+
+def calcPE(speaker1, speaker2):
+	"""Determines the sum of the percent error between each of the stylistic feature values in speaker1's and speaker2's averaged fingerprints"""
+	# Assigns default value
+	totPE = 0
+	# For in loop to go through the five values in a fingerprint
+	for i in range(5):
+		# Calculates the percent error for each fingerprint value and adds it to a total
+		totPE += ((abs(speaker1[i] - speaker2[i])) / ((speaker1[i] + speaker2[i]) / 2)) * 100
+	# Returns totPE
+	return totPE
