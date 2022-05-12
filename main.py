@@ -22,4 +22,4 @@ print(multFP(trumpList))
 print("Martin Luther King Jr's average fingerprint:")
 print(multFP(mlkList))
 
-calcPE(multFP(fatherList), multFP(trumpList))
+print(bestFit(multFP(fatherList), multFP(trumpList), multFP(mlkList)))
