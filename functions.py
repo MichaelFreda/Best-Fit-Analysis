@@ -184,14 +184,16 @@ def calcPE(speaker1, speaker2):
 
 def bestFit(speaker1, speaker2, speaker3):
 	"""Determines if speaker2 is most similar to speaker1 or speaker3 by comparing the sums of their percent errors from their fingerprints.  In this program, speaker1 will be Father Coughlin, speaker2 will be Trump, and speaker3 will be Martin Luther King Jr."""
+	# Calculates the total percent error for each comparison
 	compare1 = calcPE(speaker1, speaker2)
 	compare2 = calcPE(speaker3, speaker2)
-	print(compare1)
-	print(compare2)
+	# Whichever comparison had the lowest total is the most similar to speaker2
 	if compare1 < compare2:
 		conclusion = "Trump is most similar to Coughlin."
 	elif compare1 > compare2:
 		conclusion = "Trump is most similar to Martin Luther King Jr."
+	# If the comparisons are equal, says it is unable to be determined
 	else:
 		conclusion = "They are too identical to tell."
+	# Returns the result
 	return conclusion
