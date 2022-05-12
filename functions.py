@@ -1,7 +1,7 @@
 # Michael & Derek
 import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
+#nltk.download('punkt')
+#nltk.download('stopwords')
 
 def openPaper(num):
 	"""Opens the text of num file"""
@@ -144,4 +144,30 @@ def styFP(num):
 	return fpList
 
 def multFP(numList):
-	
+	"""Returns a fingerprint that reflects the average of all the texts in numList"""
+	# Assigns default value
+	totFP = []
+	totAvgWL = 0
+	totTTR = 0
+	totHLR = 0
+	totAvgSenL = 0
+	totAvgPM = 0
+	# For loop using numList
+	for num in numList:
+		# Gets the fingerprint for that individual text
+		singleFP = styFP(num)
+		# Adds the values of each stat to a total
+		totAvgWL += singleFP[0]
+		totTTR += singleFP[1]
+		totHLR += singleFP[2]
+		totAvgSenL += singleFP[3]
+		totAvgPM += singleFP[4]
+	# Divides totals by 3 and appends it to a new list for an overall fingerprint
+	totFP.append(totAvgWL/3)
+	totFP.append(totTTR/3)
+	totFP.append(totHLR/3)
+	totFP.append(totAvgSenL/3)
+	totFP.append(totAvgPM/3)
+	# Returns totFP
+	return totFP
+			

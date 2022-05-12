@@ -7,4 +7,4 @@
 from functions import *
 
 numList = [1, 2, 3]
-print(styFP(num))
+print(multFP(numList))
