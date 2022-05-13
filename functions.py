@@ -5,12 +5,16 @@ nltk.download('stopwords')
 
 def openPaper(num):
 	"""Opens the text of num file"""
+	# Guardian to make sure num is an integer
+	assert isinstance(num, int), "num must be an integer"
 	# Creates the in Object from the desired text file
 	inObject = open("text_"+str(num)+".txt")
 	return inObject
 
 def getText(num):
 	"""Returns a string for the num text file"""
+	# Guardian to make sure num is an integer
+	assert isinstance(num, int), "num must be an integer"
 	# Calls the openPaper function to create a new textObject
 	textObject = openPaper(num)
 	# Creates a textString using the previously made textObject
@@ -19,13 +23,15 @@ def getText(num):
 	openPaper(num).close()
 	return textString
 
-def avgWLength(list):
+def avgWLength(wordList):
 	"""Returns the average word length in list"""
+	# Guardian to make sure wordList is a list
+	assert isinstance(wordList, list), "text must be a list"
 	# Assigns default values
 	tLetters = 0
 	wordCount = 0
 	# For loop using list
-	for char in list:
+	for char in wordList:
 		# Adds the letters from char to tLetters
 		tLetters += len(char)
 		# Goes up 1 for every word counted
@@ -34,37 +40,47 @@ def avgWLength(list):
 	average = tLetters/wordCount
 	return average
 
-def tTR(text, dict):
+def tTR(text, textDict):
 	"""Returns the Type-Token Ratio using the text string and the desired dict dictionary"""
+	# Guardian to make sure text is a string
+	assert isinstance(text, str), "text must be a string"
+	# Guardian to make sure textDict is a dictionary
+	assert isinstance(textDict, dict), "textDict must be a dictionary"
 	# Assigns default values
 	dWords = 0
 	tWords = 0
 	# For loop using dict
-	for word in dict:
+	for word in textDict:
 		# Adds 1 for every distinct word in dict
 		dWords += 1
 		# Add the dict value of every word to tWords
-		tWords += dict[word]
+		tWords += textDict[word]
 	# Returns Type-Token Ratio
 	return dWords / tWords
 
-def hLR(text, dict):
+def hLR(text, textDict):
 	"""Returns the Hapax Legomena Ratio using the text string and the desired dict dictionary"""
+	# Guardian to make sure text is a string
+	assert isinstance(text, str), "text must be a string"
+	# Guardian to make sure textDict is a dictionary
+	assert isinstance(textDict, dict), "textDict must be a dictionary"
 	# Assigns default values
 	sWords = 0
 	tWords = 0
 	# For loop using dict
-	for word in dict:
+	for word in textDict:
 		# If the word only shows up once, add 1 to sWords
-		if dict[word] == 1:
+		if textDict[word] == 1:
 			sWords += 1
 		# Add the dict value of every word to tWords
-		tWords += dict[word]
+		tWords += textDict[word]
 	# Returns Hapax Legomena Ratio
 	return sWords/tWords
 
 def createDict(textList):
 	"""Creates a dictionary using text"""
+	# Guardian to make sure textList is a list
+	assert isinstance(textList, list), "textList must be a list"
 	# Assigns default values
 	wordDict = {}
 	# For loop using text
@@ -77,18 +93,22 @@ def createDict(textList):
 		 wordDict[word] += 1
 	return wordDict
 
-def delNonWord(text):
+def delNonWord(textList):
 	"""Deletes non-words from text"""
+	# Guardian to make sure textList is a list
+	assert isinstance(textList, list), "textList must be a list"
 	# For loop using text
-	for word in text:
+	for word in textList:
 		# Determines what counts as a non-word
 		if (word == ",") or (word == ".") or (word == "!") or (word == "?"):
 			# Removes the non-word from text
-			text.remove(word)
-	return text
+			textList.remove(word)
+	return textList
 
 def avgSenLen(textList):
 	"""Computes and returns the average sentence length in textList"""
+	# Guardian to make sure textList is a list
+	assert isinstance(textList, list), "textList must be a list"
 	# Assigns default values
 	tWords = 0
 	sentNum = 0
@@ -105,6 +125,8 @@ def avgSenLen(textList):
 
 def avgPunMarks(textList):
 	"""Computes and returns the average punctuation marks used in textList"""
+	# Guardian to make sure textList is a list
+	assert isinstance(textList, list), "textList must be a list"
 	# Assigns default values
 	pMarks = 0
 	sentNum = 0
@@ -124,6 +146,8 @@ def avgPunMarks(textList):
 
 def styFP(num):
 	"""Computes a stylistic fingerprint for num text"""
+	# Guardian to make sure num is an integer
+	assert isinstance(num, int), "num must be an integer"
 	# Assigns default value
 	fpList = []
 	# Uses getText function to get text value
@@ -145,6 +169,8 @@ def styFP(num):
 
 def multFP(numList):
 	"""Returns a fingerprint that reflects the average of all the texts in numList"""
+	# Guardian to make sure textList is a list
+	assert isinstance(numList, list), "textList must be a list"
 	# Assigns default value
 	totFP = []
 	totAvgWL = 0
@@ -173,6 +199,8 @@ def multFP(numList):
 
 def calcPE(speaker1, speaker2):
 	"""Determines the sum of the percent error between each of the stylistic feature values in speaker1's and speaker2's averaged fingerprints"""
+	# Guardian to make sure speaker1 and speaker2 are lists
+	assert isinstance([speaker1, speaker2], list), "speaker1 and speaker2 must be lists"
 	# Assigns default value
 	totPE = 0
 	# For in loop to go through the five values in a fingerprint
@@ -184,6 +212,8 @@ def calcPE(speaker1, speaker2):
 
 def bestFit(speaker1, speaker2, speaker3):
 	"""Determines if speaker2 is most similar to speaker1 or speaker3 by comparing the sums of their percent errors from their fingerprints.  In this program, speaker1 will be Father Coughlin, speaker2 will be Trump, and speaker3 will be Martin Luther King Jr."""
+	# Guardian to make sure speaker1, speaker2, and speaker3 are lists
+	assert isinstance([speaker1, speaker2, speaker3], list), "speaker1, speaker2 and speaker3 must be lists"
 	# Calculates the total percent error for each comparison
 	compare1 = calcPE(speaker1, speaker2)
 	compare2 = calcPE(speaker3, speaker2)
